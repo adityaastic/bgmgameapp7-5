@@ -3,6 +3,7 @@ import { Positions } from "react-native-calendars/src/expandableCalendar";
 import { getRightStyles } from "react-native-paper/lib/typescript/components/List/utils";
 
 // appStyles.js
+
 const appStyles = {
   header: {
     backgroundColor: '#E1EFE6',
