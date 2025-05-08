@@ -16,6 +16,7 @@ import COLORS from '../components/COLORS';
 import Toast from 'react-native-simple-toast';
 import { useLogin } from '../hooks/useLogin';
 import Icon from 'react-native-vector-icons/MaterialIcons'; // Add this import
+import PolicyLinks from '../components/PolicyLinks';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
@@ -165,7 +166,7 @@ const LoginScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <View style={{ marginTop: 20, alignItems: 'center' }}>
+        <View style={{ marginTop: 20, marginBottom:70, alignItems: 'center' }}>
           <Text style={{ color: '#000000' }}>
             Don't have an account?{' '}
             <Text
@@ -175,9 +176,18 @@ const LoginScreen = () => {
             </Text>
           </Text>
         </View>
+
+        <View style={styles.policiesContainer}>
+  <PolicyLinks />
+</View>
       </ScrollView>
+
+
+
       <Loader visiblity={loader} />
     </View>
+
+    
   );
 };
 

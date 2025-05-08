@@ -14,6 +14,7 @@ import appStyles from '../styles/appStyles';
 import useForgotPassword from '../hooks/useForgotPassword';
 import { useNavigation } from '@react-navigation/native';
 import { Eye, EyeOff } from 'react-native-feather'; // Make sure to install react-native-feather or use another icon library
+import PolicyLinks from '../components/PolicyLinks';
 
 const ForgotPasswordScreen = () => {
   const navigation = useNavigation();
@@ -84,7 +85,7 @@ const ForgotPasswordScreen = () => {
           />
         </View>
 
-        <View style={{ backgroundColor: '#E1EFE6', padding: 20, borderRadius: 10, marginHorizontal: 20, marginTop: 20 }}>
+        <View style={{ backgroundColor: '#E1EFE6', padding: 20, borderRadius: 10, marginHorizontal: 20, marginTop: 20,  marginBottom:70, }}>
           <Text style={styles.title}>Forgot MPIN</Text>
           <Text style={styles.subtitle}>
             {step === 'enterMobile'
@@ -218,6 +219,12 @@ const ForgotPasswordScreen = () => {
             </Text>
           </TouchableOpacity>
         </View>
+
+
+          <View style={styles.policiesContainer}>
+          <PolicyLinks/>
+        </View>
+
       </ScrollView>
     </View>
   );

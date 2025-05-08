@@ -1,4 +1,4 @@
-// screens/RegisterScreen.js
+
 import React, { useState } from 'react';
 import {
   View,
@@ -16,6 +16,7 @@ import Loader from '../components/Loader';
 import useSignup from '../hooks/useSignup';
 import { useNavigation } from '@react-navigation/native';
 import CheckBox from '@react-native-community/checkbox';
+import PolicyLinks from '../components/PolicyLinks';
 
 const RegisterScreen = () => {
   const {
@@ -80,7 +81,7 @@ const RegisterScreen = () => {
   return (
     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
       <ScrollView>
-        <View style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 30 }}>
+        <View style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 30, }}>
           <Image
             source={require('../images/app_ic.png')}
             style={[styles.logoimage, { height: 140, width: 140 }]}
@@ -168,7 +169,7 @@ const RegisterScreen = () => {
             </View>
           </View>
         ) : (
-          <View style={{ backgroundColor: '#E1EFE6', padding: 20, borderRadius: 10, marginHorizontal: 20, marginTop: 20 }}>
+          <View style={{ backgroundColor: '#E1EFE6', padding: 20, borderRadius: 10, marginHorizontal: 20, marginTop: 20, }}>
             <Text style={{ textAlign: 'center', fontSize: 18, fontWeight: 'bold', marginBottom: 20 }}>Verify OTP</Text>
             
             <View style={{ marginBottom: 20 }}>
@@ -212,9 +213,16 @@ const RegisterScreen = () => {
             </TouchableOpacity>
           </View>
         )}
-      </ScrollView>
-      
-      <Loader visiblity={signupMutation.isPending || verifyOtpMutation.isPending} />
+
+        </ScrollView>
+
+{/* Sticky policy links at bottom */}
+<View style={styles.policiesSticky}>
+  <PolicyLinks />
+</View>
+
+<Loader visiblity={signupMutation.isPending || verifyOtpMutation.isPending} />
+
     </View>
   );
 };
